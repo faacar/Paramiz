@@ -82,7 +82,8 @@ class AktivitelerVC: UITableViewController {
 //        } else {
 //            secilenHucre?.accessoryType = .checkmark
 //        }
-        tableView.reloadData() // cellForRowAt metodu tekrar calisacak ve butun satirlar yeniden oluscak
+//        tableView.reloadData() // cellForRowAt metodu tekrar calisacak ve butun satirlar yeniden oluscak
+        performSegue(withIdentifier: "odemeListesiSegue", sender: self)
     }
     
     @IBAction func btnAktiviteEkle(_ sender: UIBarButtonItem) {
