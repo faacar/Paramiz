@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		720196B725235A4000590851 /* AktivitelerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720196B625235A4000590851 /* AktivitelerVC.swift */; };
+		725CD3332524BC5E00B2F45F /* Aktivite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725CD3322524BC5E00B2F45F /* Aktivite.swift */; };
 		72B94CE3252353F90046F4D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B94CE2252353F90046F4D3 /* AppDelegate.swift */; };
 		72B94CE5252353F90046F4D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B94CE4252353F90046F4D3 /* SceneDelegate.swift */; };
 		72B94CEA252353F90046F4D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B94CE8252353F90046F4D3 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		720196B625235A4000590851 /* AktivitelerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitelerVC.swift; sourceTree = "<group>"; };
+		725CD3322524BC5E00B2F45F /* Aktivite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aktivite.swift; sourceTree = "<group>"; };
 		72B94CDF252353F90046F4D3 /* Paramiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paramiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B94CE2252353F90046F4D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72B94CE4252353F90046F4D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				72B94CE2252353F90046F4D3 /* AppDelegate.swift */,
 				72B94CE4252353F90046F4D3 /* SceneDelegate.swift */,
 				720196B625235A4000590851 /* AktivitelerVC.swift */,
+				725CD3322524BC5E00B2F45F /* Aktivite.swift */,
 				72B94CE8252353F90046F4D3 /* Main.storyboard */,
 				72B94CEB252353FA0046F4D3 /* Assets.xcassets */,
 				72B94CED252353FA0046F4D3 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				720196B725235A4000590851 /* AktivitelerVC.swift in Sources */,
 				72B94CE3252353F90046F4D3 /* AppDelegate.swift in Sources */,
+				725CD3332524BC5E00B2F45F /* Aktivite.swift in Sources */,
 				72B94CE5252353F90046F4D3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
