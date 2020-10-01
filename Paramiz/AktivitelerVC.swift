@@ -39,9 +39,11 @@ class AktivitelerVC: UITableViewController {
         a4.Bittimi = true
         aktivitelerListesi.append(a4)
         
-        if let aktiviteler = veriler.array(forKey: "AktivitelerListesi") as? [Aktivite] {
-            aktivitelerListesi = aktiviteler
-        }
+        verileriYukle()
+  //artik verileri bu sekilde kaydetmeme gerek yok
+//        if let aktiviteler = veriler.array(forKey: "AktivitelerListesi") as? [Aktivite] {
+//            aktivitelerListesi = aktiviteler
+//        }
         
     }
 
@@ -96,19 +98,34 @@ class AktivitelerVC: UITableViewController {
                 a1.Adi = txtAktiviteAdi.text!
                 self.aktivitelerListesi.append(a1)
                 //self.veriler.set(self.aktivitelerListesi, forKey: "AktiviteListesi")
-                do {
-                    let data = try PropertyListEncoder().encode(self.aktivitelerListesi)
-                    try data.write(to: self.dosyaYolu)
-                } catch {
-                    print("Veriler kaydedilirken hata meydanda geldi: \(error.localizedDescription)")
-                }
+                self.verileriKaydet()
                 self.tableView.reloadData()
             }
         }
         alertController.addAction(ekleACtion) // alertController'a ekledik
         present(alertController, animated: true, completion: nil) // alertController'in sunumu
     }
+    //verileri Plist'e kaydeder
+    func verileriKaydet() {
+        do {
+            let data = try PropertyListEncoder().encode(self.aktivitelerListesi)
+            try data.write(to: self.dosyaYolu)
+        } catch {
+            print("Veriler kaydedilirken hata meydanda geldi: \(error.localizedDescription)")
+        }
+    }
+    //verileri Plist'den ceker
+    func verileriYukle() {
+        
+        if let veri = try? Data(contentsOf: dosyaYolu) {
+            do {
+                aktivitelerListesi = try PropertyListDecoder().decode([Aktivite].self, from: veri)
+            } catch {
+                print("Verileri getirirken hata meydana geldi: \(error.localizedDescription)")
+            }
+        }
+        
+    }
     
-
 
 }
