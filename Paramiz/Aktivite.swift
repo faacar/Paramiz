@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Aktivite {
+class Aktivite: Codable {
     var Adi: String = ""
     var Bittimi: Bool = false
 }

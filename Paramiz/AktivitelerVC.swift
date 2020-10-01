@@ -9,23 +9,17 @@
 import UIKit
 
 class AktivitelerVC: UITableViewController {
-//MARK: -TODO : uygulamaya hic veri girilmediyse nil oluyo ve uygulamanin cokmesine sebep oluyor ilk degeri bastan kendimiz atamaliyiz
+
     
     
-    //var aktivitelerListesi = ["Ev", "Kapadokya Gezisi", "Istanbul gezisi", "Okul Arkadaslari"]
     var aktivitelerListesi = [Aktivite]()
     var veriler = UserDefaults.standard
-    
+    let plistDosyaAdi = "AktivitelerListesi.plist"
+    let dosyaYolu = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("AktivitelerListesi.plist")
+
     override func viewDidLoad() {
-        super.viewDidLoad()
-        /*
-        if let liste = veriler.array(forKey: "AktiviteListesi") as? [String] { // eger henuz hic deger girilmediyse uygulama crash olmasin diye yazdim
-            //veriler.set("", forKey: "AktiviteListesi")
-            aktivitelerListesi = liste
-        }
-        for i in 1...100 {
-            aktivitelerListesi.append("\(i)")
-        }*/
+
+        
         let a1 = Aktivite()
         a1.Adi = "Ev"
         a1.Bittimi = true
@@ -45,15 +39,10 @@ class AktivitelerVC: UITableViewController {
         a4.Bittimi = true
         aktivitelerListesi.append(a4)
         
-        for i in 1...100 {
-            let a5 = Aktivite()
-            a5.Adi = "Okul arkadaslari\(i)"
-            a5.Bittimi = false
-            aktivitelerListesi.append(a5)
+        if let aktiviteler = veriler.array(forKey: "AktivitelerListesi") as? [Aktivite] {
+            aktivitelerListesi = aktiviteler
         }
         
-        
-        //aktivitelerListesi = veriler.array(forKey: "AktiviteListesi") as! [String]
     }
 
     // MARK: - Table view data source
@@ -83,7 +72,6 @@ class AktivitelerVC: UITableViewController {
     
     //didselectrowat -- satira basildiginda yapicalak islemler
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let secilenHucre = tableView.cellForRow(at: indexPath)
         
         aktivitelerListesi[indexPath.row].Bittimi = !aktivitelerListesi[indexPath.row].Bittimi
         
@@ -107,8 +95,13 @@ class AktivitelerVC: UITableViewController {
                 let a1 = Aktivite()
                 a1.Adi = txtAktiviteAdi.text!
                 self.aktivitelerListesi.append(a1)
-                self.veriler.set(self.aktivitelerListesi, forKey: "AktiviteListesi")
-                
+                //self.veriler.set(self.aktivitelerListesi, forKey: "AktiviteListesi")
+                do {
+                    let data = try PropertyListEncoder().encode(self.aktivitelerListesi)
+                    try data.write(to: self.dosyaYolu)
+                } catch {
+                    print("Veriler kaydedilirken hata meydanda geldi: \(error.localizedDescription)")
+                }
                 self.tableView.reloadData()
             }
         }
