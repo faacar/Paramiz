@@ -36,10 +36,48 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Mvf-ui-bpx" kind="show" identifier="odemeListesiSegue" id="vwq-ur-vyW"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gie-En-bzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-431.8840579710145" y="330.80357142857139"/>
+        </scene>
+        <!--Odeme Listesi-->
+        <scene sceneID="Lr3-Us-qTd">
+            <objects>
+                <tableViewController title="Odeme Listesi" id="Mvf-ui-bpx" customClass="OdemeListesiVC" customModule="Paramiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nQN-s3-0Eu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="odemeCell" id="TE8-IO-Xfw">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TE8-IO-Xfw" id="mdz-M5-h03">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mvf-ui-bpx" id="UGs-JJ-GCC"/>
+                            <outlet property="delegate" destination="Mvf-ui-bpx" id="Ac3-n4-Jbf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Odeme Listesi" id="c2C-gh-4bg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZJb-kg-lCI">
+                            <connections>
+                                <action selector="btnOdemeEkleClicked:" destination="Mvf-ui-bpx" id="2hK-Wh-nm1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaN-Di-tl0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278" y="330"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AaT-ZY-vIa">

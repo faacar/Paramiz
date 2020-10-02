@@ -3,20 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		720196B725235A4000590851 /* AktivitelerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720196B625235A4000590851 /* AktivitelerVC.swift */; };
+		721D758C25275B3700FB125B /* Odeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D758B25275B3600FB125B /* Odeme.swift */; };
+		725CD3332524BC5E00B2F45F /* Aktivite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725CD3322524BC5E00B2F45F /* Aktivite.swift */; };
+		7291A8FA25262BBD00C41103 /* OdemeListesiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7291A8F925262BBD00C41103 /* OdemeListesiVC.swift */; };
 		72B94CE3252353F90046F4D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B94CE2252353F90046F4D3 /* AppDelegate.swift */; };
 		72B94CE5252353F90046F4D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B94CE4252353F90046F4D3 /* SceneDelegate.swift */; };
 		72B94CEA252353F90046F4D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B94CE8252353F90046F4D3 /* Main.storyboard */; };
 		72B94CEC252353FA0046F4D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B94CEB252353FA0046F4D3 /* Assets.xcassets */; };
 		72B94CEF252353FA0046F4D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B94CED252353FA0046F4D3 /* LaunchScreen.storyboard */; };
+		82C5A2D472EFE2DFE11F0FDA /* Pods_Paramiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A141B6BA9074EF38A6C586 /* Pods_Paramiz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		720196B625235A4000590851 /* AktivitelerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitelerVC.swift; sourceTree = "<group>"; };
+		721D758B25275B3600FB125B /* Odeme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Odeme.swift; sourceTree = "<group>"; };
+		725CD3322524BC5E00B2F45F /* Aktivite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aktivite.swift; sourceTree = "<group>"; };
+		7291A8F925262BBD00C41103 /* OdemeListesiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeListesiVC.swift; sourceTree = "<group>"; };
 		72B94CDF252353F90046F4D3 /* Paramiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paramiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72B94CE2252353F90046F4D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72B94CE4252353F90046F4D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,9 @@
 		72B94CEB252353FA0046F4D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72B94CEE252353FA0046F4D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72B94CF0252353FA0046F4D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79A141B6BA9074EF38A6C586 /* Pods_Paramiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paramiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94B71AA51983DD4B061F5AB4 /* Pods-Paramiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paramiz.release.xcconfig"; path = "Target Support Files/Pods-Paramiz/Pods-Paramiz.release.xcconfig"; sourceTree = "<group>"; };
+		A86C73C8DB1E4DDE6AF847AA /* Pods-Paramiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paramiz.debug.xcconfig"; path = "Target Support Files/Pods-Paramiz/Pods-Paramiz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C5A2D472EFE2DFE11F0FDA /* Pods_Paramiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00F61259B1DA3A3D5AD74B6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79A141B6BA9074EF38A6C586 /* Pods_Paramiz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		31BEF9D03AC319FC30F0C96B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A86C73C8DB1E4DDE6AF847AA /* Pods-Paramiz.debug.xcconfig */,
+				94B71AA51983DD4B061F5AB4 /* Pods-Paramiz.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		72B94CD6252353F90046F4D3 = {
 			isa = PBXGroup;
 			children = (
 				72B94CE1252353F90046F4D3 /* Paramiz */,
 				72B94CE0252353F90046F4D3 /* Products */,
+				31BEF9D03AC319FC30F0C96B /* Pods */,
+				00F61259B1DA3A3D5AD74B6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +87,41 @@
 			isa = PBXGroup;
 			children = (
 				72B94CE2252353F90046F4D3 /* AppDelegate.swift */,
+				72C923B1252733BA00C5AFD1 /* Model */,
+				72C923B0252733AD00C5AFD1 /* View */,
+				72C923AF2527339700C5AFD1 /* Controller */,
 				72B94CE4252353F90046F4D3 /* SceneDelegate.swift */,
-				720196B625235A4000590851 /* AktivitelerVC.swift */,
-				72B94CE8252353F90046F4D3 /* Main.storyboard */,
 				72B94CEB252353FA0046F4D3 /* Assets.xcassets */,
 				72B94CED252353FA0046F4D3 /* LaunchScreen.storyboard */,
 				72B94CF0252353FA0046F4D3 /* Info.plist */,
 			);
 			path = Paramiz;
+			sourceTree = "<group>";
+		};
+		72C923AF2527339700C5AFD1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				720196B625235A4000590851 /* AktivitelerVC.swift */,
+				7291A8F925262BBD00C41103 /* OdemeListesiVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		72C923B0252733AD00C5AFD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72B94CE8252353F90046F4D3 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72C923B1252733BA00C5AFD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				725CD3322524BC5E00B2F45F /* Aktivite.swift */,
+				721D758B25275B3600FB125B /* Odeme.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72B94CF3252353FA0046F4D3 /* Build configuration list for PBXNativeTarget "Paramiz" */;
 			buildPhases = (
+				2538E83BCA163250E991DA7C /* [CP] Check Pods Manifest.lock */,
 				72B94CDB252353F90046F4D3 /* Sources */,
 				72B94CDC252353F90046F4D3 /* Frameworks */,
 				72B94CDD252353F90046F4D3 /* Resources */,
+				5A21AA5759486C40E3767945 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +192,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2538E83BCA163250E991DA7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Paramiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A21AA5759486C40E3767945 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Paramiz/Pods-Paramiz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Paramiz/Pods-Paramiz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Paramiz/Pods-Paramiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		72B94CDB252353F90046F4D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721D758C25275B3700FB125B /* Odeme.swift in Sources */,
 				720196B725235A4000590851 /* AktivitelerVC.swift in Sources */,
 				72B94CE3252353F90046F4D3 /* AppDelegate.swift in Sources */,
+				725CD3332524BC5E00B2F45F /* Aktivite.swift in Sources */,
+				7291A8FA25262BBD00C41103 /* OdemeListesiVC.swift in Sources */,
 				72B94CE5252353F90046F4D3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +386,7 @@
 		};
 		72B94CF4252353FA0046F4D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A86C73C8DB1E4DDE6AF847AA /* Pods-Paramiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +405,7 @@
 		};
 		72B94CF5252353FA0046F4D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94B71AA51983DD4B061F5AB4 /* Pods-Paramiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
