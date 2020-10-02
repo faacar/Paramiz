@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Aktivite: Codable {
-    var Adi: String = ""
-    var Bittimi: Bool = false
+class Aktivite: Object {
+    @objc dynamic var Adi: String = ""
+    @objc dynamic var Bittimi: Bool = false
+    let odemeler = List<Odeme>()
 }

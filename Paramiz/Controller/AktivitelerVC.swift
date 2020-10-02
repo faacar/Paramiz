@@ -7,47 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class AktivitelerVC: UITableViewController {
 
     
     
     var aktivitelerListesi = [Aktivite]()
-    var veriler = UserDefaults.standard
-    let plistDosyaAdi = "AktivitelerListesi.plist"
-    let dosyaYolu = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("AktivitelerListesi.plist")
-
+    let realm = try! Realm()
     override func viewDidLoad() {
-
-        
-        let a1 = Aktivite()
-        a1.Adi = "Ev"
-        a1.Bittimi = true
-        aktivitelerListesi.append(a1)
-
-        let a2 = Aktivite()
-        a2.Adi = "Kapadokya gezisi"
-        aktivitelerListesi.append(a2)
-        
-        let a3 = Aktivite()
-        a3.Adi = "Istanbul gezisi"
-        a3.Bittimi = false
-        aktivitelerListesi.append(a3)
-        
-        let a4 = Aktivite()
-        a4.Adi = "Okul arkadaslari"
-        a4.Bittimi = true
-        aktivitelerListesi.append(a4)
         
         verileriYukle()
-  //artik verileri bu sekilde kaydetmeme gerek yok
-//        if let aktiviteler = veriler.array(forKey: "AktivitelerListesi") as? [Aktivite] {
-//            aktivitelerListesi = aktiviteler
-//        }
         
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -98,35 +72,26 @@ class AktivitelerVC: UITableViewController {
                 let a1 = Aktivite()
                 a1.Adi = txtAktiviteAdi.text!
                 self.aktivitelerListesi.append(a1)
-                //self.veriler.set(self.aktivitelerListesi, forKey: "AktiviteListesi")
-                self.verileriKaydet()
+                self.verileriKaydet(aktivite: a1)
                 self.tableView.reloadData()
             }
         }
         alertController.addAction(ekleACtion) // alertController'a ekledik
         present(alertController, animated: true, completion: nil) // alertController'in sunumu
     }
-    //verileri Plist'e kaydeder
-    func verileriKaydet() {
+
+    func verileriKaydet(aktivite: Aktivite) {
         do {
-            let data = try PropertyListEncoder().encode(self.aktivitelerListesi)
-            try data.write(to: self.dosyaYolu)
-        } catch {
-            print("Veriler kaydedilirken hata meydanda geldi: \(error.localizedDescription)")
-        }
-    }
-    //verileri Plist'den ceker
-    func verileriYukle() {
-        
-        if let veri = try? Data(contentsOf: dosyaYolu) {
-            do {
-                aktivitelerListesi = try PropertyListDecoder().decode([Aktivite].self, from: veri)
-            } catch {
-                print("Verileri getirirken hata meydana geldi: \(error.localizedDescription)")
+            try realm.write {
+                realm.add(aktivite)
             }
+        } catch {
+            print("Realm bir hata verdi:\(error.localizedDescription)")
         }
-        
     }
     
+    func verileriYukle() {
+        
+    }
 
 }

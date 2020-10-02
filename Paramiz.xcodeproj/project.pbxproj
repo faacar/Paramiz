@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		720196B725235A4000590851 /* AktivitelerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720196B625235A4000590851 /* AktivitelerVC.swift */; };
+		721D758C25275B3700FB125B /* Odeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D758B25275B3600FB125B /* Odeme.swift */; };
 		725CD3332524BC5E00B2F45F /* Aktivite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725CD3322524BC5E00B2F45F /* Aktivite.swift */; };
 		7291A8FA25262BBD00C41103 /* OdemeListesiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7291A8F925262BBD00C41103 /* OdemeListesiVC.swift */; };
 		72B94CE3252353F90046F4D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B94CE2252353F90046F4D3 /* AppDelegate.swift */; };
@@ -15,12 +16,12 @@
 		72B94CEA252353F90046F4D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B94CE8252353F90046F4D3 /* Main.storyboard */; };
 		72B94CEC252353FA0046F4D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72B94CEB252353FA0046F4D3 /* Assets.xcassets */; };
 		72B94CEF252353FA0046F4D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72B94CED252353FA0046F4D3 /* LaunchScreen.storyboard */; };
-		72C923B3252733EE00C5AFD1 /* Kisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C923B2252733EE00C5AFD1 /* Kisi.swift */; };
 		82C5A2D472EFE2DFE11F0FDA /* Pods_Paramiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79A141B6BA9074EF38A6C586 /* Pods_Paramiz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		720196B625235A4000590851 /* AktivitelerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitelerVC.swift; sourceTree = "<group>"; };
+		721D758B25275B3600FB125B /* Odeme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Odeme.swift; sourceTree = "<group>"; };
 		725CD3322524BC5E00B2F45F /* Aktivite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aktivite.swift; sourceTree = "<group>"; };
 		7291A8F925262BBD00C41103 /* OdemeListesiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeListesiVC.swift; sourceTree = "<group>"; };
 		72B94CDF252353F90046F4D3 /* Paramiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paramiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,7 +31,6 @@
 		72B94CEB252353FA0046F4D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72B94CEE252353FA0046F4D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72B94CF0252353FA0046F4D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72C923B2252733EE00C5AFD1 /* Kisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kisi.swift; sourceTree = "<group>"; };
 		79A141B6BA9074EF38A6C586 /* Pods_Paramiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paramiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B71AA51983DD4B061F5AB4 /* Pods-Paramiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paramiz.release.xcconfig"; path = "Target Support Files/Pods-Paramiz/Pods-Paramiz.release.xcconfig"; sourceTree = "<group>"; };
 		A86C73C8DB1E4DDE6AF847AA /* Pods-Paramiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paramiz.debug.xcconfig"; path = "Target Support Files/Pods-Paramiz/Pods-Paramiz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,10 +86,10 @@
 		72B94CE1252353F90046F4D3 /* Paramiz */ = {
 			isa = PBXGroup;
 			children = (
+				72B94CE2252353F90046F4D3 /* AppDelegate.swift */,
 				72C923B1252733BA00C5AFD1 /* Model */,
 				72C923B0252733AD00C5AFD1 /* View */,
 				72C923AF2527339700C5AFD1 /* Controller */,
-				72B94CE2252353F90046F4D3 /* AppDelegate.swift */,
 				72B94CE4252353F90046F4D3 /* SceneDelegate.swift */,
 				72B94CEB252353FA0046F4D3 /* Assets.xcassets */,
 				72B94CED252353FA0046F4D3 /* LaunchScreen.storyboard */,
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				725CD3322524BC5E00B2F45F /* Aktivite.swift */,
-				72C923B2252733EE00C5AFD1 /* Kisi.swift */,
+				721D758B25275B3600FB125B /* Odeme.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,12 +239,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721D758C25275B3700FB125B /* Odeme.swift in Sources */,
 				720196B725235A4000590851 /* AktivitelerVC.swift in Sources */,
 				72B94CE3252353F90046F4D3 /* AppDelegate.swift in Sources */,
 				725CD3332524BC5E00B2F45F /* Aktivite.swift in Sources */,
 				7291A8FA25262BBD00C41103 /* OdemeListesiVC.swift in Sources */,
 				72B94CE5252353F90046F4D3 /* SceneDelegate.swift in Sources */,
-				72C923B3252733EE00C5AFD1 /* Kisi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

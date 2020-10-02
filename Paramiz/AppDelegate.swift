@@ -17,17 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString)
-        
-        let kisi = Kisi()
-        kisi.adi = "Abidin"
-        kisi.soyadi = "Dino"
-        kisi.yasi = 65
-        
+    
         do {
             let realm = try Realm()
-            try realm.write {
-                realm.add(kisi)
-            }
         } catch {
             print("Realm veri eklerken hata meydana geldi: \(error.localizedDescription)")
         }
