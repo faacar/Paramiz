@@ -9,8 +9,11 @@
 import UIKit
 import RealmSwift
 
-class OdemeListesiVC: UITableViewController {
+class OdemeListesiVC: UITableViewController, UISearchBarDelegate {
 
+    
+    @IBOutlet weak var searhBar: UISearchBar!
+    
     let realm = try! Realm()
     var odemeListesi: Results<Odeme>?
     var secilenAktivite: Aktivite? {
@@ -21,6 +24,7 @@ class OdemeListesiVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searhBar.delegate = self
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -42,8 +46,11 @@ class OdemeListesiVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "odemeCell",for: indexPath)
+        
+        
+        
         if let odeme = odemeListesi?[indexPath.row] {
-            cell.textLabel?.text = odeme.odeyeninAdi
+            cell.textLabel?.text = "\(odeme.odeyeninAdi) - \(odeme.miktar) Lira"
         } else {
             cell.textLabel?.text = "Henuz eklenen bir odeme bulunamadi" // buralari bi daha incele bakim
         }
@@ -84,7 +91,9 @@ class OdemeListesiVC: UITableViewController {
             }
             self.tableView.reloadData()
         }
+        let cancel = UIAlertAction(title: "Iptal", style: UIAlertAction.Style.cancel, handler: nil)
         alertController.addAction(add)
+        alertController.addAction(cancel)
         present(alertController, animated: true, completion: nil)
         
     }
@@ -128,6 +137,22 @@ class OdemeListesiVC: UITableViewController {
         }
         tableView.reloadData()
     }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if odemeListesi?.count == 0 {
+            odemeleriYukle()
+        }
+        odemeListesi = odemeListesi?.filter("odeyeninAdi == %@", searchBar.text!).sorted(byKeyPath: "miktar", ascending: true)
+        tableView.reloadData()
+    }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {//eger kisi searhBar'daki butun mesaji silmisse herseyi eski haline getir
+            odemeleriYukle()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder() // kullanici tum degerleri sildiginde klavye yok olacak
+            }
+        }
+    }
     
 }

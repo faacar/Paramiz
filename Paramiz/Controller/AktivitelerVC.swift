@@ -10,16 +10,17 @@ import UIKit
 import RealmSwift
 
 
-class AktivitelerVC: UITableViewController {
-
+class AktivitelerVC: UITableViewController, UISearchBarDelegate {
     
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var aktivitelerListesi: Results<Aktivite>?
     let realm = try! Realm()
+    
     override func viewDidLoad() {
         
         verileriYukle()
-        
+        searchBar.delegate = self
     }
 
     //kac bolum olsun onu belirler
@@ -115,6 +116,20 @@ class AktivitelerVC: UITableViewController {
             }
         }
         tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        aktivitelerListesi = aktivitelerListesi?.filter("Adi CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "Adi", ascending: true)
+        tableView.reloadData()
+    }
+    //textdidchange
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            verileriYukle() // kullanicinin girdigi bir deger yok o zaman tum verileri yukle
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder() // kullanici tum degerkeri sildiginde klavye yok olacak
+            }
+        }
     }
 
 }
