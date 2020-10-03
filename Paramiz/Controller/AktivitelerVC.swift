@@ -22,7 +22,11 @@ class AktivitelerVC: UITableViewController, UISearchBarDelegate {
         verileriYukle()
         searchBar.delegate = self
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     //kac bolum olsun onu belirler
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -34,7 +38,15 @@ class AktivitelerVC: UITableViewController, UISearchBarDelegate {
     //cellforrowat -- cell'lerin icindeki verileri doldurur
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "aktiviteCell")
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "aktiviteCell", for: indexPath)
+        
+        let sonuc: Int = aktivitelerListesi?[indexPath.row].odemeler.sum(ofProperty: "miktar") ?? 0
+        
+        if let adi = aktivitelerListesi?[indexPath.row].Adi {
+            cell.textLabel?.text = "\(adi) - \(sonuc)"
+        } else {
+            cell.textLabel?.text = "Aktivite Bulunamadi"
+        }
+        
         cell.textLabel?.text = aktivitelerListesi?[indexPath.row].Adi ?? "Aktivite Bulunamadi"
    
         if aktivitelerListesi?[indexPath.row].Bittimi ?? false {
@@ -127,7 +139,7 @@ class AktivitelerVC: UITableViewController, UISearchBarDelegate {
         if searchBar.text?.count == 0 {
             verileriYukle() // kullanicinin girdigi bir deger yok o zaman tum verileri yukle
             DispatchQueue.main.async {
-                searchBar.resignFirstResponder() // kullanici tum degerkeri sildiginde klavye yok olacak
+                searchBar.resignFirstResponder() // kullanici tum degerleri sildiginde klavye yok olacak
             }
         }
     }

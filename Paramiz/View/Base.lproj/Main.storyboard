@@ -174,16 +174,34 @@
                                     <action selector="btnGuncelleCliked:" destination="D4H-Ml-bif" eventType="touchUpInside" id="lJh-8x-WFA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aktivite Adi: Deneme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-O6-4em">
+                                <rect key="frame" x="20" y="395" width="374" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toplam Odeme: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2g-gj-dGk">
+                                <rect key="frame" x="20" y="436.5" width="374" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="O2g-gj-dGk" firstAttribute="leading" secondItem="PaG-OJ-Z65" secondAttribute="leading" constant="20" id="00E-Kl-AnB"/>
                             <constraint firstItem="BYe-aQ-tRA" firstAttribute="leading" secondItem="PaG-OJ-Z65" secondAttribute="leading" constant="20" id="2QY-XM-nL8"/>
                             <constraint firstItem="CIs-To-HYH" firstAttribute="leading" secondItem="PaG-OJ-Z65" secondAttribute="leading" constant="20" id="Fyr-I4-dqC"/>
+                            <constraint firstItem="PaG-OJ-Z65" firstAttribute="trailing" secondItem="sx5-O6-4em" secondAttribute="trailing" constant="20" id="Hqc-DD-3gQ"/>
                             <constraint firstItem="Gh5-4f-Yym" firstAttribute="centerX" secondItem="DVe-sT-Ds1" secondAttribute="centerX" id="Ufz-r5-9wA"/>
                             <constraint firstItem="Gh5-4f-Yym" firstAttribute="top" secondItem="PaG-OJ-Z65" secondAttribute="top" constant="35" id="Zps-pG-g2N"/>
+                            <constraint firstItem="O2g-gj-dGk" firstAttribute="top" secondItem="sx5-O6-4em" secondAttribute="bottom" constant="20" id="bxU-Jc-WLc"/>
                             <constraint firstItem="PaG-OJ-Z65" firstAttribute="trailing" secondItem="CIs-To-HYH" secondAttribute="trailing" constant="20" id="fow-tz-Cxa"/>
+                            <constraint firstItem="PaG-OJ-Z65" firstAttribute="trailing" secondItem="O2g-gj-dGk" secondAttribute="trailing" constant="20" id="jg5-fS-QPx"/>
+                            <constraint firstItem="sx5-O6-4em" firstAttribute="leading" secondItem="PaG-OJ-Z65" secondAttribute="leading" constant="20" id="ka8-V6-3PY"/>
                             <constraint firstItem="CIs-To-HYH" firstAttribute="top" secondItem="BYe-aQ-tRA" secondAttribute="bottom" constant="15" id="pss-KC-B6b"/>
                             <constraint firstItem="BYe-aQ-tRA" firstAttribute="top" secondItem="Gh5-4f-Yym" secondAttribute="bottom" constant="60" id="w2Q-Sf-HA9"/>
+                            <constraint firstItem="sx5-O6-4em" firstAttribute="top" secondItem="CIs-To-HYH" secondAttribute="bottom" constant="20" id="yGp-h7-xB9"/>
                             <constraint firstItem="PaG-OJ-Z65" firstAttribute="trailing" secondItem="BYe-aQ-tRA" secondAttribute="trailing" constant="20" id="zyQ-KB-E40"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PaG-OJ-Z65"/>
@@ -191,6 +209,8 @@
                     <navigationItem key="navigationItem" title="Duzenle" id="djm-OC-eP9"/>
                     <connections>
                         <outlet property="guncelleButton" destination="CIs-To-HYH" id="Z6d-xQ-kTp"/>
+                        <outlet property="lblAktiviteAdi" destination="sx5-O6-4em" id="tGN-r7-T8g"/>
+                        <outlet property="lblToplamOdeme" destination="O2g-gj-dGk" id="9DM-7t-e5d"/>
                         <outlet property="txtAciklama" destination="4Id-F6-4dB" id="Sad-o7-g9n"/>
                         <outlet property="txtOdemeKisiAdi" destination="Dqw-kv-0IV" id="lZN-aF-uv7"/>
                         <outlet property="txtUcret" destination="nFj-N2-qOe" id="LXi-BT-xJh"/>

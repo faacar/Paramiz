@@ -112,6 +112,7 @@ class OdemeListesiVC: UITableViewController, UISearchBarDelegate {
             if let seciliIndex = tableView.indexPathForSelectedRow {
                 if let secilenOdeme = odemeListesi?[seciliIndex.row] {
                     hedefVC.secilenOdeme = secilenOdeme
+                    hedefVC.secilenAktivite = secilenAktivite
                     hedefVC.title = "\(secilenOdeme.odeyeninAdi) Odeme Bilgileri"
                 }
             }

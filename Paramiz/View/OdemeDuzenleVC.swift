@@ -13,11 +13,14 @@ class OdemeDuzenleVC: UIViewController {
 
     let realm = try! Realm()
     var secilenOdeme: Odeme?
+    var secilenAktivite: Aktivite?
     
     @IBOutlet weak var guncelleButton: UIButton!
     @IBOutlet weak var txtOdemeKisiAdi: UITextField!
     @IBOutlet weak var txtAciklama: UITextField!
     @IBOutlet weak var txtUcret: UITextField!
+    @IBOutlet weak var lblAktiviteAdi: UILabel!
+    @IBOutlet weak var lblToplamOdeme: UILabel!
     
     
     override func viewDidLoad() {
@@ -54,6 +57,10 @@ class OdemeDuzenleVC: UIViewController {
         txtOdemeKisiAdi.text = secilenOdeme?.odeyeninAdi
         txtAciklama.text = secilenOdeme?.aciklama
         txtUcret.text = "\(secilenOdeme!.miktar)"
+        
+        lblAktiviteAdi.text = "Aktivite Adi: \(secilenAktivite!.Adi)"
+        let toplamOdeme = secilenAktivite?.odemeler.filter("odeyeninAdi == %@", secilenOdeme?.odeyeninAdi).sum(ofProperty: "miktar") ?? 0
+        lblToplamOdeme.text = "Yaptigi Toplam Odeme: \(toplamOdeme) Lira"
     }
 
 
