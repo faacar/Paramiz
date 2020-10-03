@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,10 +75,118 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="D4H-Ml-bif" kind="show" identifier="odemeDuzenleSegue" id="xWj-9u-jss"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaN-Di-tl0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="278" y="330"/>
+        </scene>
+        <!--Duzenle-->
+        <scene sceneID="zXF-cl-bHE">
+            <objects>
+                <viewController id="D4H-Ml-bif" customClass="OdemeDuzenleVC" customModule="Paramiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DVe-sT-Ds1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odeme Bilgileri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh5-4f-Yym">
+                                <rect key="frame" x="124.5" y="123" width="165.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" red="0.1057610586" green="0.45914357900000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BYe-aQ-tRA">
+                                <rect key="frame" x="20" y="212" width="374" height="118"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="r4T-me-D1z">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9H-TI-5u9">
+                                                <rect key="frame" x="0.0" y="0.0" width="30.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dqw-kv-0IV">
+                                                <rect key="frame" x="156.5" y="0.0" width="217.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="81" translatesAutoresizingMaskIntoConstraints="NO" id="rjI-8R-o3L">
+                                        <rect key="frame" x="0.0" y="42" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aciklama:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX3-48-bT6">
+                                                <rect key="frame" x="0.0" y="0.0" width="76" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Id-F6-4dB">
+                                                <rect key="frame" x="157" y="0.0" width="217" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="108" translatesAutoresizingMaskIntoConstraints="NO" id="g4v-Tj-4y1">
+                                        <rect key="frame" x="0.0" y="84" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ucret:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ie-g3-8Hy">
+                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nFj-N2-qOe">
+                                                <rect key="frame" x="156.5" y="0.0" width="217.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIs-To-HYH">
+                                <rect key="frame" x="20" y="345" width="374" height="30"/>
+                                <color key="backgroundColor" red="0.98809152840000003" green="0.87362442829999998" blue="0.63000513629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="aJV-sL-ipN"/>
+                                    <constraint firstAttribute="height" constant="30" id="dd6-hg-AMv"/>
+                                </constraints>
+                                <state key="normal" title="Guncelle"/>
+                                <connections>
+                                    <action selector="btnGuncelleCliked:" destination="D4H-Ml-bif" eventType="touchUpInside" id="lJh-8x-WFA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BYe-aQ-tRA" firstAttribute="leading" secondItem="PaG-OJ-Z65" secondAttribute="leading" constant="20" id="2QY-XM-nL8"/>
+                            <constraint firstItem="CIs-To-HYH" firstAttribute="leading" secondItem="PaG-OJ-Z65" secondAttribute="leading" constant="20" id="Fyr-I4-dqC"/>
+                            <constraint firstItem="Gh5-4f-Yym" firstAttribute="centerX" secondItem="DVe-sT-Ds1" secondAttribute="centerX" id="Ufz-r5-9wA"/>
+                            <constraint firstItem="Gh5-4f-Yym" firstAttribute="top" secondItem="PaG-OJ-Z65" secondAttribute="top" constant="35" id="Zps-pG-g2N"/>
+                            <constraint firstItem="PaG-OJ-Z65" firstAttribute="trailing" secondItem="CIs-To-HYH" secondAttribute="trailing" constant="20" id="fow-tz-Cxa"/>
+                            <constraint firstItem="CIs-To-HYH" firstAttribute="top" secondItem="BYe-aQ-tRA" secondAttribute="bottom" constant="15" id="pss-KC-B6b"/>
+                            <constraint firstItem="BYe-aQ-tRA" firstAttribute="top" secondItem="Gh5-4f-Yym" secondAttribute="bottom" constant="60" id="w2Q-Sf-HA9"/>
+                            <constraint firstItem="PaG-OJ-Z65" firstAttribute="trailing" secondItem="BYe-aQ-tRA" secondAttribute="trailing" constant="20" id="zyQ-KB-E40"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PaG-OJ-Z65"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Duzenle" id="djm-OC-eP9"/>
+                    <connections>
+                        <outlet property="guncelleButton" destination="CIs-To-HYH" id="Z6d-xQ-kTp"/>
+                        <outlet property="txtAciklama" destination="4Id-F6-4dB" id="Sad-o7-g9n"/>
+                        <outlet property="txtOdemeKisiAdi" destination="Dqw-kv-0IV" id="lZN-aF-uv7"/>
+                        <outlet property="txtUcret" destination="nFj-N2-qOe" id="LXi-BT-xJh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4XA-5F-kFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1018.840579710145" y="329.46428571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AaT-ZY-vIa">

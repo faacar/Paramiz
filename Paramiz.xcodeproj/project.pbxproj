@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		720196B725235A4000590851 /* AktivitelerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720196B625235A4000590851 /* AktivitelerVC.swift */; };
 		721D758C25275B3700FB125B /* Odeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D758B25275B3600FB125B /* Odeme.swift */; };
+		721D758E25277DBD00FB125B /* OdemeDuzenleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D758D25277DBD00FB125B /* OdemeDuzenleVC.swift */; };
 		725CD3332524BC5E00B2F45F /* Aktivite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725CD3322524BC5E00B2F45F /* Aktivite.swift */; };
 		7291A8FA25262BBD00C41103 /* OdemeListesiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7291A8F925262BBD00C41103 /* OdemeListesiVC.swift */; };
 		72B94CE3252353F90046F4D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B94CE2252353F90046F4D3 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		720196B625235A4000590851 /* AktivitelerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AktivitelerVC.swift; sourceTree = "<group>"; };
 		721D758B25275B3600FB125B /* Odeme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Odeme.swift; sourceTree = "<group>"; };
+		721D758D25277DBD00FB125B /* OdemeDuzenleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OdemeDuzenleVC.swift; path = Paramiz/View/OdemeDuzenleVC.swift; sourceTree = SOURCE_ROOT; };
 		725CD3322524BC5E00B2F45F /* Aktivite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aktivite.swift; sourceTree = "<group>"; };
 		7291A8F925262BBD00C41103 /* OdemeListesiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdemeListesiVC.swift; sourceTree = "<group>"; };
 		72B94CDF252353F90046F4D3 /* Paramiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paramiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 			children = (
 				720196B625235A4000590851 /* AktivitelerVC.swift */,
 				7291A8F925262BBD00C41103 /* OdemeListesiVC.swift */,
+				721D758D25277DBD00FB125B /* OdemeDuzenleVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				721D758E25277DBD00FB125B /* OdemeDuzenleVC.swift in Sources */,
 				721D758C25275B3700FB125B /* Odeme.swift in Sources */,
 				720196B725235A4000590851 /* AktivitelerVC.swift in Sources */,
 				72B94CE3252353F90046F4D3 /* AppDelegate.swift in Sources */,
