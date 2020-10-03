@@ -108,6 +108,26 @@ class OdemeListesiVC: UITableViewController {
             }
         }
     }
+    //candEditRowAt -- herhangi bri satirin editlenip editlenemiyecegini ayarlar
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    //editingstyle
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let secilenOdeme = odemeListesi?[indexPath.row] {
+                do {
+                    try realm.write {
+                        realm.delete(secilenOdeme)
+                        print("Odeme basariyla silindi")
+                    }
+                } catch {
+                    print("Silme islemi sirasinda bir hata ile karsilasildi: \(error.localizedDescription)")
+                }
+            }
+        }
+        tableView.reloadData()
+    }
     
     
 }

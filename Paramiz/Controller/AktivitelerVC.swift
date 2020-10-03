@@ -95,5 +95,26 @@ class AktivitelerVC: UITableViewController {
         aktivitelerListesi = realm.objects(Aktivite.self)
         tableView.reloadData()
     }
+    
+    //caneditrowat -- silme islemine onay
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    //editingstyle -- edit olarak ne yapilacak onun yazilmasi
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let silincekAktivite = aktivitelerListesi?[indexPath.row] {
+                do {
+                    try realm.write {
+                        realm.delete(silincekAktivite.odemeler)
+                        realm.delete(silincekAktivite)
+                    }
+                } catch {
+                    print("Aktiviteyi silerken hata meydanda geldi: \(error.localizedDescription)")
+                }
+            }
+        }
+        tableView.reloadData()
+    }
 
 }
