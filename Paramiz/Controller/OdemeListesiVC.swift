@@ -100,6 +100,7 @@ class OdemeListesiVC: UITableViewController, UISearchBarDelegate {
     
     func odemeleriYukle() {
         odemeListesi = secilenAktivite?.odemeler.sorted(byKeyPath: "odeyeninAdi", ascending: true)
+        tableView.reloadData()
     }
     //didSelectRowAt
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

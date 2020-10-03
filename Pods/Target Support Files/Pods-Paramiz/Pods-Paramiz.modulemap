@@ -1,0 +1,6 @@
+framework module Pods_Paramiz {
+  umbrella header "Pods-Paramiz-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -40,7 +40,7 @@ class AktivitelerVC: UITableViewController, UISearchBarDelegate {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "aktiviteCell")
         
         let sonuc: Int = aktivitelerListesi?[indexPath.row].odemeler.sum(ofProperty: "miktar") ?? 0
-        
+        print(sonuc)
         if let adi = aktivitelerListesi?[indexPath.row].Adi {
             cell.textLabel?.text = "\(adi) - \(sonuc)"
         } else {
@@ -50,9 +50,8 @@ class AktivitelerVC: UITableViewController, UISearchBarDelegate {
         cell.textLabel?.text = aktivitelerListesi?[indexPath.row].Adi ?? "Aktivite Bulunamadi"
    
         if aktivitelerListesi?[indexPath.row].Bittimi ?? false {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
+            cell.backgroundColor = UIColor.lightGray
+            cell.textLabel?.textColor = UIColor.white
         }
         
         return cell
@@ -114,21 +113,53 @@ class AktivitelerVC: UITableViewController, UISearchBarDelegate {
         true
     }
     //editingstyle -- edit olarak ne yapilacak onun yazilmasi
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            if let silincekAktivite = aktivitelerListesi?[indexPath.row] {
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            if let silincekAktivite = aktivitelerListesi?[indexPath.row] {
+//                do {
+//                    try realm.write {
+//                        realm.delete(silincekAktivite.odemeler)
+//                        realm.delete(silincekAktivite)
+//                    }
+//                } catch {
+//                    print("Aktiviteyi silerken hata meydanda geldi: \(error.localizedDescription)")
+//                }
+//            }
+//        }
+//        tableView.reloadData()
+//    } -- bir altta bastan yeni bir sekilde yazdik
+    //editActionsForRowAt
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let silme = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: "Sil") { (action, indexPath) in
+            if let silincekAktivite = self.aktivitelerListesi?[indexPath.row] {
                 do {
-                    try realm.write {
-                        realm.delete(silincekAktivite.odemeler)
-                        realm.delete(silincekAktivite)
+                    try self.realm.write {
+                        self.realm.delete(silincekAktivite.odemeler)
+                        self.realm.delete(silincekAktivite)
                     }
                 } catch {
                     print("Aktiviteyi silerken hata meydanda geldi: \(error.localizedDescription)")
                 }
             }
+            tableView.reloadData()
         }
-        tableView.reloadData()
+        let odesme = UITableViewRowAction(style: UITableViewRowAction.Style.normal, title: "Odestik") { (action, indexPath) in
+            if let aktivite = self.aktivitelerListesi?[indexPath.row] {
+                do {
+                    try self.realm.write {
+                        aktivite.Bittimi = true
+                        print("Aktivite odesme calisti")
+                    }
+                } catch {
+                    print("Odesme sirasinda hata meydanda geldi:\(error.localizedDescription)")
+                }
+            }
+            tableView.reloadData()
+        }
+        odesme.backgroundColor = .green
+        return [odesme, silme]
     }
+    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         aktivitelerListesi = aktivitelerListesi?.filter("Adi CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "Adi", ascending: true)
